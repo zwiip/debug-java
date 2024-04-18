@@ -8,11 +8,15 @@ public class AnalyticsCounter {
 	private ISymptomReader reader;
 	private ISymptomWriter writer;
 
-AnalyticsCounter(ISymptomReader reader, ISymptomWriter writer) {
-	this.reader = reader;
-	this.writer = writer;
-}	
+	AnalyticsCounter(ISymptomReader reader, ISymptomWriter writer) {
+		this.reader = reader;
+		this.writer = writer;
+	}	
 
+	public List<String> getSymptoms() {
+		return reader.getSymptoms();
+	}
+	
 	/* private static int headacheCount = 0;
 	private static int rashCount = 0;
 	private static int pupilCount = 0;
