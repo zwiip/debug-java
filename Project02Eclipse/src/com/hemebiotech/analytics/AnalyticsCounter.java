@@ -5,6 +5,14 @@ import java.io.FileReader;
 import java.io.FileWriter;
 
 public class AnalyticsCounter {
+	private ISymptomReader reader;
+	private ISymptomWriter writer;
+
+AnalyticsCounter(ISymptomReader reader, ISymptomWriter writer) {
+	this.reader = reader;
+	this.writer = writer;
+}	
+
 	/* private static int headacheCount = 0;
 	private static int rashCount = 0;
 	private static int pupilCount = 0;
