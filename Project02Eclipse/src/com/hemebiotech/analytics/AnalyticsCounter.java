@@ -25,10 +25,10 @@ public class AnalyticsCounter {
 			symptomsCountMap.putIfAbsent(symptom, 0);
 			symptomsCountMap.put(symptom, symptomsCountMap.get(symptom) +1);
 		}
-		return symptomsCountMap
+		return symptomsCountMap;
 	}
 
-	public void writeSymptoms(Map<Strin, Integer> symptoms) {
+	public void writeSymptoms(Map<String, Integer> symptoms) {
 		writer.writeSymptoms(symptoms);
 	}
 

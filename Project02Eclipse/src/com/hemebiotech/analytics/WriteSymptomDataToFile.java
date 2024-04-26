@@ -2,7 +2,7 @@ package com.hemebiotech.analytics;
 
 import java.io.FileWriter;
 import java.util.Map;
-import.java.util.TreeMap;
+import java.util.TreeMap;
 import java.io.IOException;
 
 public class WriteSymptomDataToFile implements ISymptomWriter {
