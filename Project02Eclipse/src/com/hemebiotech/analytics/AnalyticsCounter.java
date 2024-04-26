@@ -3,6 +3,12 @@ package com.hemebiotech.analytics;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.List;
+import com.hemebiotech.analytics.ISymptomReader;
+import com.hemebiotech.analytics.ISymptomWriter;
+
 
 public class AnalyticsCounter {
 	private ISymptomReader reader;
@@ -14,9 +20,35 @@ public class AnalyticsCounter {
 	}	
 
 	public List<String> getSymptoms() {
-		return reader.getSymptoms();
+		List<String> symptoms = reader.getSymptoms();
+		return symptoms;
 	}
+
+	public Map<String, Integer> countSymptoms(List<String> symptoms) {
+		Map<String, Integer> symptomsCountMap = new TreeMap<>();
+
+		for (String symptom : symptoms) {
+			symptomsCountMap.putIfAbsent(symptom, 0);
+			symptomsCountMap.put(symptom, symptomsCountMap.get(symptom) +1);
+		}
+		return symptomsCountMap
+
 	
+		/*
+		try {
+			while(reader.hasNextLine()) {
+				String line = reader.nextLine();
+				symptoms.putIfAbsent(line, 0);
+				symptoms.put(line, symptoms.get(line) +1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println(symptomsCountMap);
+		return symptomsCountMap;
+		 */
+	}
+
 	/* private static int headacheCount = 0;
 	private static int rashCount = 0;
 	private static int pupilCount = 0;
@@ -50,6 +82,6 @@ public class AnalyticsCounter {
 		writer.write("rash: " + rashCount + "\n");
 		writer.write("dialated pupils: " + pupilCount + "\n");
 		writer.close();
-		 */
 	}
+	*/
 }
