@@ -14,5 +14,4 @@ public class Main {
         Map<String, Integer> symptomsResult = counter.countSymptoms(symptomsInput);
         counter.writeSymptoms(symptomsResult);
     }
-    
 }
