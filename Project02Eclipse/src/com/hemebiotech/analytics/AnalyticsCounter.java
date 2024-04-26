@@ -32,21 +32,10 @@ public class AnalyticsCounter {
 			symptomsCountMap.put(symptom, symptomsCountMap.get(symptom) +1);
 		}
 		return symptomsCountMap
+	}
 
-	
-		/*
-		try {
-			while(reader.hasNextLine()) {
-				String line = reader.nextLine();
-				symptoms.putIfAbsent(line, 0);
-				symptoms.put(line, symptoms.get(line) +1);
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		System.out.println(symptomsCountMap);
-		return symptomsCountMap;
-		 */
+	public void writeSymptoms(Map<Strin, Integer> symptoms) {
+		writer.writeSymptoms(symptoms);
 	}
 
 	/* private static int headacheCount = 0;
